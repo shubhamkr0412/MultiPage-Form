@@ -39,22 +39,22 @@ const FirstPage = () => {
         <div className="centerr">
           {" "}
           <label> Name:</label>
-          <input type="text" onChange={(e) => setName(e.target.value)}></input>
+          <input type="text" required onChange={(e) => setName(e.target.value)}></input>
         </div>
         <br></br>
         <div className="centerr">
           {" "}
           <label> Age:</label>
-          <input type="number" onChange={(e) => setAge(e.target.value)}></input>
+          <input type="number" required onChange={(e) => setAge(e.target.value)}></input>
         </div>
         <br></br>
         <div className="centerr">
           {" "}
           <label> Dob:</label>
-          <input type="date" onChange={(e) => setDate(e.target.value)}></input>
+          <input type="date" required onChange={(e) => setDate(e.target.value)}></input>
         </div>
-        <div className="centerr">
-          <button className="btn" onClick={()=>{
+        <div className="btn">
+          <button className="btnn" onClick={()=>{
        const payload={
         name:name,
         age:age,
