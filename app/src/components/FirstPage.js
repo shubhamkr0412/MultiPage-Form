@@ -1,14 +1,26 @@
 import React from "react";
 import "../App.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 const FirstPage = () => {
+  let history=useHistory();
+
   const [age, setAge] = useState("");
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   console.log(age);
   console.log(name);
   console.log(date);
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    if(age =="" && name =="" && date ==""){
+      alert("Hello")
+    }
+    else{
+     history.push("/second");
+    }
+  }
 
   // const [todos,setTodos]=useState([]);
   return (
@@ -36,26 +48,27 @@ const FirstPage = () => {
     // </div>
 
     <div className="center">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="centerr">
           {" "}
           <label> Name:</label>
-          <input type="text" required onChange={(e) => setName(e.target.value)}></input>
+          <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
         </div>
         <br></br>
         <div className="centerr">
           {" "}
           <label> Age:</label>
-          <input type="number" required onChange={(e) => setAge(e.target.value)}></input>
+          <input type="number" value={age} onChange={(e) => setAge(e.target.value)}></input>
         </div>
         <br></br>
         <div className="centerr">
           {" "}
           <label> Dob:</label>
-          <input type="date" required onChange={(e) => setDate(e.target.value)}></input>
+          <input type="date" value={date} onChange={(e) => setDate(e.target.value)}></input>
         </div>
         <div className="btn">
-         <Link to={"/second"}> <button className="btnn" onClick={()=>{
+          
+          <button type="submit" className="btnn" onClick={()=>{
        const payload={
         name:name,
         age:age,
@@ -69,7 +82,7 @@ const FirstPage = () => {
            "content-type":"application/json",
          },
        });
-      }}>Click Me</button></Link>
+      }}>Click Me</button>
         </div>
       </form>
     </div>
