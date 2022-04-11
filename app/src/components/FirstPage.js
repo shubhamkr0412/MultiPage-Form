@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const FirstPage = () => {
-  let history=useHistory();
+  let history=useNavigate();
 
   const [age, setAge] = useState("");
   const [name, setName] = useState("");
@@ -12,15 +12,15 @@ const FirstPage = () => {
   console.log(age);
   console.log(name);
   console.log(date);
-  const handleSubmit=(e)=>{
-    e.preventDefault();
-    if(age =="" && name =="" && date ==""){
-      alert("Hello")
-    }
-    else{
-     history.push("/second");
-    }
-  }
+  // const handleSubmit=(e)=>{
+  //   e.preventDefault();
+  //   // if(age =="" && name =="" && date ==""){
+  //   //   alert("Hello")
+  //   // }
+  //   // else{
+  //   //   history("/second");
+  //   // }
+  // }
 
   // const [todos,setTodos]=useState([]);
   return (
@@ -48,7 +48,7 @@ const FirstPage = () => {
     // </div>
 
     <div className="center">
-      <form onSubmit={handleSubmit}>
+      <form >
         <div className="centerr">
           {" "}
           <label> Name:</label>

@@ -1,71 +1,9 @@
 {
   "todos": [
-    {
-      "name": "Shubham",
-      "age": "25",
-      "date": "2022-04-11",
-      "id": 1
-    },
-    {
-      "name": "Piyush ",
-      "age": "26",
-      "date": "1996-12-04",
-      "id": 2
-    },
-    {
-      "name": "",
-      "age": "12",
-      "date": "",
-      "id": 3
-    },
-    {
-      "name": "Abc",
-      "age": "",
-      "date": "",
-      "required": true,
-      "id": 4
-    },
-    {
-      "name": "Abcd",
-      "age": "123",
-      "date": "2022-04-07",
-      "required": true,
-      "id": 5
-    },
-    {
-      "name": "",
-      "age": "",
-      "date": "",
-      "required": true,
-      "id": 6
-    },
-    {
-      "name": "",
-      "age": "",
-      "date": "",
-      "required": true,
-      "id": 7
-    },
-    {
-      "name": "",
-      "age": "",
-      "date": "",
-      "required": true,
-      "id": 8
-    },
-    {
-      "name": "",
-      "age": "",
-      "date": "",
-      "required": true,
-      "id": 9
-    },
-    {
-      "name": "dgfdg",
-      "age": "",
-      "date": "",
-      "required": true,
-      "id": 10
-    }
+   
+  ],
+  "todos1": [
+   
   ]
+
 }
