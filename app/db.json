@@ -1,7 +1,29 @@
 {
   "todos": [
     {
+      "name": "Shubham",
+      "age": "25",
+      "date": "2022-04-11",
       "id": 1
+    },
+    {
+      "name": "Piyush ",
+      "age": "26",
+      "date": "1996-12-04",
+      "id": 2
+    },
+    {
+      "name": "",
+      "age": "12",
+      "date": "",
+      "id": 3
+    },
+    {
+      "name": "Abc",
+      "age": "",
+      "date": "",
+      "required": true,
+      "id": 4
     }
   ]
 }
