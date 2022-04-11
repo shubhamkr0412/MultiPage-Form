@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const FirstPage = () => {
   const [age, setAge] = useState("");
   const [name, setName] = useState("");
@@ -54,7 +55,7 @@ const FirstPage = () => {
           <input type="date" required onChange={(e) => setDate(e.target.value)}></input>
         </div>
         <div className="btn">
-          <button className="btnn" onClick={()=>{
+         <Link to={"/second"}> <button className="btnn" onClick={()=>{
        const payload={
         name:name,
         age:age,
@@ -68,7 +69,7 @@ const FirstPage = () => {
            "content-type":"application/json",
          },
        });
-      }}>Click Me</button>
+      }}>Click Me</button></Link>
         </div>
       </form>
     </div>
