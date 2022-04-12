@@ -1,18 +1,36 @@
 import React from 'react'
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 const SecondPage = () => {
   const [stat, setStat] = useState("");
   const [addr, setAddr] = useState("");
   const [pin, setPin] = useState("");
+  let history=useNavigate();
   const handleSubmitt=(e)=>{
     e.preventDefault();
-    
-      alert("Completed");
-   
+    if(stat =="" || addr =="" || pin ==""){
+      alert("Complete the form")
+    }
+    else{
+      const payload={
+        stat:stat,
+        addr:addr,
+        pin:pin,
+        required:true
+       }
+       fetch("http://localhost:3001/todos1",{
+         method:"POST",
+         body:JSON.stringify(payload),
+         headers:{
+           "content-type":"application/json",
+         },
+       });
+      alert("form completed");
+    }
   }
   return (
     <div className="center">
-      <form >
+      <form  onSubmit={handleSubmitt}>
         <div className="centerr">
           {" "}
           <label> State:</label>
@@ -22,31 +40,17 @@ const SecondPage = () => {
         <div className="centerr">
           {" "}
           <label> Address:</label>
-          <input type="number" value={addr} onChange={(e) => setAddr(e.target.value)}></input>
+          <input type="text" value={addr} onChange={(e) => setAddr(e.target.value)}></input>
         </div>
         <br></br>
         <div className="centerr">
           {" "}
           <label> Pincode</label>
-          <input type="date" value={pin} onChange={(e) => setPin(e.target.value)}></input>
+          <input type="number" value={pin} onChange={(e) => setPin(e.target.value)}></input>
         </div>
         <div className="btn">
           
-          <button  className="btnn" onClick={()=>{
-       const payload={
-        stat:stat,
-        addr:addr,
-        pin:pin,
-       
-       }
-       fetch("http://localhost:3001/todos1",{
-         method:"POST",
-         body:JSON.stringify(payload),
-         headers:{
-           "content-type":"application/json",
-         },
-       });
-      }}>Click Me</button>
+          <button type='submit' className="btnn" >Click Me</button>
         </div>
       </form>
     </div>

@@ -9,46 +9,36 @@ const FirstPage = () => {
   const [age, setAge] = useState("");
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
-  console.log(age);
-  console.log(name);
-  console.log(date);
-  // const handleSubmit=(e)=>{
-  //   e.preventDefault();
-  //   // if(age =="" && name =="" && date ==""){
-  //   //   alert("Hello")
-  //   // }
-  //   // else{
-  //   //   history("/second");
-  //   // }
-  // }
 
-  // const [todos,setTodos]=useState([]);
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    if(age =="" || name =="" || date ==""){
+      alert("Complete the form")
+    }
+    else{
+      const payload={
+        name:name,
+        age:age,
+        date:date,
+        required:true
+       }
+       fetch("http://localhost:3001/todos",{
+         method:"POST",
+         body:JSON.stringify(payload),
+         headers:{
+           "content-type":"application/json",
+         },
+       });
+      history("/second");
+    }
+  }
+
+  
   return (
-    // <div>
-    //   <input
-    //     type="text"
-
-    //     onChange={(e) => setText(e.target.value)}
-    //     placeholder="Enter text"
-    //   />
-    //   <button onClick={()=>{
-    //    const payload={
-    //     title:text,
-    //     status:false
-    //    }
-    //    fetch("http://localhost:3001/todos",{
-    //      method:"POST",
-    //      body:JSON.stringify(payload),
-    //      headers:{
-    //        "content-type":"application/json",
-    //      },
-    //    });
-    //   }}>Submit</button>
-    //   {[].map((e)=>(<div>{e}</div>))}
-    // </div>
+    
 
     <div className="center">
-      <form >
+      <form onSubmit={handleSubmit}>
         <div className="centerr">
           {" "}
           <label> Name:</label>
@@ -68,21 +58,7 @@ const FirstPage = () => {
         </div>
         <div className="btn">
           
-          <button type="submit" className="btnn" onClick={()=>{
-       const payload={
-        name:name,
-        age:age,
-        date:date,
-        required:true
-       }
-       fetch("http://localhost:3001/todos",{
-         method:"POST",
-         body:JSON.stringify(payload),
-         headers:{
-           "content-type":"application/json",
-         },
-       });
-      }}>Click Me</button>
+          <button type="submit" className="btnn" >Click Me</button>
         </div>
       </form>
     </div>
