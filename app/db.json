@@ -1,8 +1,20 @@
 {
   "todos": [
-    
+    {
+      "name": "Shub",
+      "age": "25",
+      "date": "2022-04-12",
+      "required": true,
+      "id": 1
+    }
   ],
   "todos1": [
-    
+    {
+      "stat": "Jhar",
+      "addr": "abcdf",
+      "pin": "814133",
+      "required": true,
+      "id": 1
+    }
   ]
 }
